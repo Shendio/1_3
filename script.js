@@ -26,3 +26,10 @@ bg_button.addEventListener("click", () => {
   const random_index = Math.floor(Math.random() * colors.length);
   document.body.style.backgroundColor = colors[random_index];
 });
+
+const ex2_txt = document.getElementById("ex2_text");
+const ex2_cont = document.getElementById("ex2_content");
+
+ex2_txt.addEventListener("input", () => {
+  ex2_cont.textContent = "Wpisano " + ex2_txt.value.length + " znaków";
+});

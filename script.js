@@ -33,3 +33,21 @@ const ex2_cont = document.getElementById("ex2_content");
 ex2_txt.addEventListener("input", () => {
   ex2_cont.textContent = "Wpisano " + ex2_txt.value.length + " znaków";
 });
+
+const timer_button = document.getElementById("ex6_button");
+const timer_disp = document.getElementById("ex6_content");
+
+let timer_interval = null;
+let counter = 0;
+
+timer_button.addEventListener("click", () => {
+  if (timer_interval === null) {
+    timer_interval = setInterval(() => {
+      counter++;
+      timer_disp.textContent = counter;
+    }, 1000);
+  } else {
+    clearInterval(timer_interval);
+    timer_interval = null;
+  }
+});
